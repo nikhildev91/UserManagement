@@ -1,0 +1,26 @@
+<div class="container p-5">
+    <div class="row w-50">
+        <div class="card p-5">
+            <form id="signUpForm" action="/admin/update-user/{{foundUser._id}}" method="post">
+                <div class="mb-3">
+                    <label for="" class="form-label">Name</label>
+                    <input type="text" class="form-control" name="Name" value="{{foundUser.Name}}">
+                  </div>
+                <div class="mb-3">
+                  <label for="" class="form-label">Email address</label>
+                  <input type="email" class="form-control" name="Email" value="{{foundUser.Email}}">
+                  
+                </div>
+               <div>
+                  <button type="submit" class="btn btn-primary me-auto">Submit</button> 
+               </div>
+                
+               
+              </form>
+        </div>
+       
+
+    </div>
+</div>
+
+

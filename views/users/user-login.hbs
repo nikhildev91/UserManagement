@@ -1,0 +1,40 @@
+<div class="container mt-5">
+    <div class="row">
+     
+      <h1>Login</h1>
+
+        <div class="card p-5 w-50">
+           {{#if successMessage}}
+
+          <div class="alert alert-success">
+              {{successMessage}}
+          </div>
+
+        
+
+        {{/if}}
+              <form action="/user-login" method="POST">
+  <div class="mb-3">
+    <label for="" class="form-label">Email address</label>
+    <input type="email" class="form-control" name="Email">
+    
+  </div>
+  <div class="mb-3">
+    <label for=" " class="form-label">Password</label>
+    <input type="password" class="form-control" name="Password">
+  </div>
+
+  <a href="/user-signup" style="float:right;">Create Account</a>
+  
+  <button type="submit" class="btn btn-primary">Submit</button>
+</form>
+        </div>
+
+      
+
+    </div>
+</div>
+
+
+
+

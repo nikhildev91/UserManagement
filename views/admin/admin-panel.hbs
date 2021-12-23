@@ -1,0 +1,67 @@
+<nav class="navbar navbar-light bg-light">
+  <div class="container-fluid">
+    <h1>Admin panel HomePage</h1>
+
+     <input class="search p-2" type="text" id="Search" onkeyup="search()" placeholder="Search for names..">
+
+       <div class="addUser" style="float: right;">
+        
+
+
+            <a href="/admin/adduser" class="btn btn-primary">Add User</a>
+            <a href="/admin-login/logout" class="btn border border-danger">Log Out</a>
+          </div>
+    
+  </div>
+</nav>
+
+
+
+
+<div class="container">
+    <div class="row">
+        <div class="md-3">
+          {{!-- <input type="text" id="Search" onkeyup="search()" placeholder="Search for names.."> --}}
+          {{!-- <div class="addUser" style="float: right;">
+        
+
+
+            <a href="/admin/adduser" class="btn btn-primary">Add User</a>
+            <a href="/admin-login/logout" class="btn border border-danger">Log Out</a>
+          </div> --}}
+            <table class="table" id="admintable">
+  <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">Name</th>
+      <th scope="col">Email ID</th>
+      <th>Status</th>
+      <th scope="col">Modify</th>
+    </tr>
+  </thead>
+  <tbody>
+      {{#each allUsers}}
+    <tr>
+
+      <th scope="row">*</th>
+      <td>{{this.Name}}</td>
+      <td>{{this.Email}}</td>
+      <td>{{this.isEnabled}}</td>
+      <td class="w-25">
+          <a href="/admin/update-user/{{this._id}}" class="btn btn-success mt-2">Update</a>
+          {{#if this.isEnabled}}
+          <a href="/admin/disable-user/{{this._id}}" class="btn btn-info mt-2" onclick="return confirm('Are you sure?')">Disable</a>
+         
+          {{else}}
+          <a href="/admin/enable-user/{{this._id}}" class="btn btn-info mt-2">Enable</a>
+          {{/if}}
+          <a href="/admin/delete-user/{{this._id}}" class="btn btn-danger mt-2" onclick="return confirm('Are you sure?')">Delete</a>
+      </td>
+    </tr>
+    {{/each}}
+  </tbody>
+</table>
+        </div>
+    </div>
+</div>
+

@@ -1,0 +1,43 @@
+<div class="container p-5">
+    <div class="row w-50">
+      <h1>SignUp</h1>
+        <div class="card p-5">
+          {{#if errMessage}}
+          <div class="alert alert-danger">
+            {{errMessage}}
+          </div>
+          {{/if}}
+            <form id="signUpForm" action="/user-signup" method="post">
+                <div class="mb-3">
+                    <label for="" class="form-label">Name</label>
+                    <input type="text" class="form-control" name="Name">
+                  </div>
+                <div class="mb-3">
+                  <label for="" class="form-label">Email address</label>
+                  <input type="email" class="form-control" name="Email">
+                  
+                </div>
+                <div class="mb-3">
+                  <label for="" class="form-label">Password</label>
+                  <input type="password" class="form-control" id="Password" name="Password">
+                </div>
+                <div class="mb-3">
+                    <label for="" class="form-label">Confirm Password</label>
+                    <input type="password" class="form-control" name="ConfirmPassword">
+                  </div>
+
+                  <div>
+                    <a href="/user-login" style="float: right;">Already have Account?</a>
+
+                    <button type="submit" class="btn btn-primary">Submit</button>
+
+                  </div>
+      
+              </form>
+        </div>
+       
+
+    </div>
+</div>
+
+
